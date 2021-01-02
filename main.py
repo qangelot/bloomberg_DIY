@@ -14,6 +14,7 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 STOCK_API_KEY = "STOCK_API_KEY"
 NEWS_API_KEY = "NEWS_API_KEY"
 
+# Use a dummy email account and lower security options to allow this script to work
 MY_EMAIL = "test_email"
 MY_PASSWORD = "password"
 
@@ -47,7 +48,7 @@ else:
 variation = round((difference / float(day_before_closing_price)) * 100, 2)
 print(variation)
 # If variation percentage is greater than 5 then fetch news data
-if abs(variation) > 1:
+if abs(variation) > 5:
     news_params = {
         "apiKey": NEWS_API_KEY,
         "qInTitle": COMPANY_NAME,
